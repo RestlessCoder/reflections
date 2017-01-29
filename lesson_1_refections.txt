@@ -1,0 +1,50 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+	It allows me to quickly and easily see both files which allows me to spot differences quickly. For example, if I had to look in one file and then open another file I could forget what I had read in the first file and that could lead to more complication.
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+   By allowing me to compare previous versions of code and the current versions of code to spot the bugs more quickly. I would be able to look back on these files later on if I ever ran across a problem that you had in a program before, this would allow me to see how I fixed the problem. And also allow me to experiment with the code without breaking the code because I know that I can always go back to a working version.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    The pros of having every commit in Git to make sense to the users like myself. The con is human/users error such as forgetting to commit or not publishing commits at the right time.
+    Having a automatically saved versions is less effort on my part. 
+
+    However, if versions of my code were saved automatically, there is no guarantee a working version would ever be saved. E.g. If I wanted to compare a broken version of my code to a previous working version, I might not acually have a working version.
+
+    With autosaved versions, it can be difficult to understand what changes are introduced in each version
+
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+	
+	I think it's the fact that Google Docs isn't really geared towards code or for people who will be editing multiple files at once.
+
+	When files are interdependent(dependence of two or more things on each other), as they often happen in code, changing multiple files in each commit makes sense. A single logical change may touch more than one file, and it would be nice to group the entire change into one commit.
+
+	When files are independent, tracking them together introduces unnecessary overhead when looking through the history. If I changed two unrelated files, then commited the changes together, it would be harded to revert to a previous version of one file without reverting to a previous version of another, which I probably wouldn't want to do.
+
+
+How can you use the commands git log and git diff to view the history of files?
+
+    You can use Git log to actually view the entire history of the file(e.g. shows all the commits, or version, of my files that I have saved). I can use that to  see message for each commit, and get quick idea of the sorts of changes that have been made.
+
+    You can use Git diff to compare two different versions to see what exactly changed in each version. To dig deeper into any commit and see exactly what changes were introduced.
+	
+How might using version control make you more confident to make changes that
+could break something?
+	
+	It would allow me to changes without worry.If I did mess something in my working version of the code, i could just go back to the previous working version and fix it. Not only that, it will be easier to figure out why the code broke since I dont need to worry about forgetting what I changed.
+
+  	
+Now that you have your workspace set up, what do you want to try using Git for?
+	
+	I used Git to keep track of many documents I created when working on this course. For example, when working on the concept map for this course, I stored that in Git. Of course, I also used Git for these reflections.
+
+	I also use it for my resume. I like that when I delete older experience to make room for a newer experience, I don't need to worry about forgetting about the details of the previsous experience if I ever want to add it again.
+    
