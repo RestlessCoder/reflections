@@ -1,1 +1,49 @@
-sdsa
+What happens when you initialize a repository? Why do you need to do it?
+
+	It adds a hidden ".git" directory, but doesn't do an initial commit. You need to do it because this is what sets up the infrastructure to support the repository. (to keep log of what has been done to the projects into the respository)
+
+How is the staging area different from the working directory and the repository?
+What value do you think it offers?
+
+	The staging area is where you add changes to the repository before committing them.
+	It offers you to control over your commits where you can add all files together and then do a git commit to add the files to a single repository.
+
+How can you use the staging area to make sure you have one commit per logical change?
+	
+	> By typing "git diff" you get the changes you've made to the staging area.
+	> By typing "giff diff --staged" you see the changes between the master and the staging area.
+	> By using "git add <file>" you can specify which files tp add to your commit, allowing you to only add files that are part of the logical change to the next commit.
+	> By typing "git reset <file>" you can pull a file from the staging area in case it is not part of the logical change.
+
+What are some situations when branches would be helpful in keeping your history organized? 
+How would branches help?
+	
+	When working on a large project (keep track of small changes).
+	When working within a large team (multiple changes can be made and added to a repository).
+	Many people can work on one project and then combine the finished project without interfering with the original code.
+
+	When you create different versions of the program, like experimental features or foreign language support.
+	Branches keep the alternate versions seperate from the main version.
+	You can have a master branch that always works and is "production quality", and then have other branches for under developement.
+
+How do the diagrams help you visualize the branch structure?
+
+	They illustrated the idea of reachability, and how you can checkout a previous commit to put yourself in a "detached HEAD state" that can unreachable if you checkout a commit on a named branch. It also visualize the structure graphically and find out where a branch was created and merged at a glance.
+
+	Personal notes on brancing:
+
+		> By typing "git branch -r" shows remote branches of repository (you already downloaded the remote branches when you cloned the repositroy).
+		> By typing "git branch" only shows that branches you've created/checked out locally, but "git checkout <branch_name>" will look for <branch_name> in local and remote locations.
+		> By typing "git merge master <branch_name>" merges <branch_name> to master with a new commit that has both branches as parents. NOTED about git merge will also include the currenctly check-out branch in the merged version. So if you have branch(1) checked out, and you run git merge branch(2) branch(3), the merged version will combine branch1 as well as branch2 and branch3. That’s because the branch1 label will update after you make the merge commit, so it’s unlikely that you didn’t want the changes from branch1 included in the merge. For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.Once merged, "git log" displays commits sorted in timestamp order.
+		> By typing "git branch -d <branch_name>" deletes the branch.
+		> By typing "git merge --abort" resets to the state prior to attempting a merge if there were issues with the merge (i.e conflicts arrise between the two branches) commit conflicts can arrise if branches are edited on different operating systems due to the line feed / CRLF difference. To fix this use "git config --global core.autocrlf true".
+		>By typing "git show <commit_id>" automatically compares ("giff diff") a commit with its parent.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+	
+	The result is a new commit with 2 parents, one from each branch. This preserves reachability for all commits from both branches.
+
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+	
+	Auto-merging saves a lot of time, but it is error-prone because it isn't smart enough to know what is the best choise of code to keep in a program when there are conflicts. Also, if the code is edited in such a way as to move things around, it will really mess up the merge logic.
