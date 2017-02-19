@@ -1,1 +1,47 @@
 When would you want to use a remote repository rather than keeping all your work local?
+
+	- When collaborating with others
+	- As a way to back up in case the local hard drive crashes
+	- To share your work publicly so that other users can contribute to the work
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+	If other people are making simultaneous changes, you might end up being unable to save and then resolve the change.
+
+Describe the differences between forks, clones, and branches. When would you 
+use one instead of another?
+	
+	- Forks are clones made by Github. These are used to copy someone else's repository to make your own changes without changing their work.
+	- Clones are copies of an entire repository. These are used to copy from one location to another (e.g. from GitHub to local).
+	- Branches are where a single repositry is split in order to create different paths where different sets of changed can be applied. e.g. for when you want to try something out without affecting the "known good" version.
+
+How would you collaborate without using Git or GitHub? What would be easier and what would be harder?
+	
+	Possibilities:
+	1. 	Sitting side by side 
+		Easier: Can verbablly discuss problems without needing to commit, push, get emails, etc.
+		Harder: Don't have much record of the history of the project. Changes aren't visible to outsiders. Can't work as easily when not together.
+	2.	Manual communication by email
+		Easier: Can work apart.
+		Harder: Need to manually describe ideas that GitHub builds into its system. Would need to manually diff files. Still need version control for backups anyways.
+
+	Pull request steps (merge a branch off my fork into master on my fork)
+	1. Pull changes from remote master into local master
+	2. Merge local master into branch
+	3. Push branch to remote
+	4. Merge branch into master on GitHub
+	5. Issue pull request to merge master on my fork into master on original
+
+When would you want to make changes in a separate branch rather than directly in master? What benefits does each approach have?
+
+	Directly in master: Working by yourself, with all changes being relatively
+	clear and essential. Benefit is that you can avoid the overhead of managing
+	branches and merging. Cost is that if you break something, the whole system
+	is broken.
+	Separate branches: Allows for collaboration in which different people work
+	on different things. Benefits: Don't have to worry about breaking the system
+	for everyone else. Can work on multiple features and bug-fixes at once. 
+	Cost: More overhead, merging headaches, etc.
+
+
+
